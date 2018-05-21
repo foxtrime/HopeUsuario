@@ -27,7 +27,7 @@
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" style="position:  absolute;">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -35,8 +35,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand" style="padding-left: 350px;">
+                        Hope
                     </a>
                 </div>
 
@@ -59,23 +59,23 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu"> --}}
-                                    <li>
-                                        <a>
-                                            Preencher Dados
-                                        </a>
-                                    </li>
+                                <li>
+                                    <a>
+                                        Preencher Dados
+                                    </a>
+                                </li>
 
-                                    <li>
-                                        <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Sair
-                                        </a>
+                                <li>
+                                    <a href="{{ url('/logout') }}"
+                                        onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        Sair
+                                    </a>
 
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
                                 {{-- </ul> --}}
                             </li>
                         @endif
