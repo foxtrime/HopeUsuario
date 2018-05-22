@@ -13,7 +13,13 @@ class CreateVeiculoCargaTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('veiculocarga', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('placa');
+            $table->string('modelo');
+            $table->string('tipocaminhao');
+            $table->timestamps();
+        });
     }
 
     /**

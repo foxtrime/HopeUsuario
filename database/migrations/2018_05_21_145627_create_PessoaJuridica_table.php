@@ -13,7 +13,15 @@ class CreatePessoaJuridicaTable extends Migration
      */
     public function up()
     {
-        //
+       Schema::create('pessoajuridica', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('razaosocial');
+            $table->string('cnpj');
+            $table->string('telefone');
+            $table->string('endereco');
+            $table->string('nomepessoacontato');
+            $table->timestamps();
+        });
     }
 
     /**

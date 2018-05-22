@@ -13,7 +13,12 @@ class CreateVeiculoAgenteTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('veiculoagente', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('placa');
+            $table->string('modelo');
+            $table->timestamps();
+        });
     }
 
     /**
