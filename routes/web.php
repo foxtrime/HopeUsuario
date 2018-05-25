@@ -19,3 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+//========================================================================================
+// 										RESOURCE
+//========================================================================================
+//resources
+Route::resource('dadospessoaispf',			'PessoafisicaController');
+

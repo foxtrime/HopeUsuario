@@ -2,7 +2,7 @@
 
 @section('content')
   
-
+Voce esta na home xD
   
 
 @endsection

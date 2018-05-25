@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pessoafisica;
 
-class Pessoafisica extends Controller
+class PessoafisicaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class Pessoafisica extends Controller
      */
     public function index()
     {
-        //
+       return view ('dados.dadospessoaispf');
     }
 
     /**
