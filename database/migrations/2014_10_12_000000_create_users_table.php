@@ -17,8 +17,8 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('email')->unique();
             $table->enum('perfil',[
-                                    'Pessoa Fisica', 
-                                    'Pessoa Juridica', 
+                                    'F', 
+                                    'J', 
                                 ]);
             $table->string('password');
             $table->rememberToken();
