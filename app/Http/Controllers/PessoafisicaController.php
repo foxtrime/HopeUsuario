@@ -14,7 +14,7 @@ class PessoafisicaController extends Controller
      */
     public function index()
     {
-       return view ('dados.dadospessoaispf');
+       return view ('pessoafisica.dadospessoaispf');
     }
 
     /**

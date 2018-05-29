@@ -23,5 +23,7 @@ Route::get('/home', 'HomeController@index');
 // 										RESOURCE
 //========================================================================================
 //resources
-Route::resource('dadospessoaispf',			'PessoafisicaController');
+Route::resource('dadospessoaispf',			    'PessoafisicaController');
+Route::resource('dadosveiculos',				'VeiculocargaController');
+
 

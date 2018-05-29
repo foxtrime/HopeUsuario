@@ -39,7 +39,7 @@
 
                                  <li><a href="{{ url('/home')}}">Pagina inicial</a></li>
                                  <li><a href="{{ url('/dadospessoaispf')}}">Dados Pessoais</a></li>
-                                 <li><a href="">Dados do Veiculo</a></li>
+                                 <li><a href="{{ url('/dadosveiculos')}}">Dados do Veiculo</a></li>
                                  <li>
                                     <a href="{{ url('/logout') }}"
                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
