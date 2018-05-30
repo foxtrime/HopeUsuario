@@ -10,10 +10,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!--  Material Dashboard CSS    -->
+   {{--  <link href="{{ asset('css/bootstrap/css/bootstrap.css') }}" rel="stylesheet" /> --}}
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- W3 -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/w3.css') }}">
 
-    <link rel="stylesheet" href="/css/w3.css">
 
     <!-- Scripts -->
     <script>
@@ -55,7 +58,7 @@
                     </div>
                     <div class="w3-teal">
                         <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
-                        <b style="font-size: 25px;padding-left: 270px">Hope</b>
+                        <b style="font-size: 26px;padding-left: 242px">HOPE</b>
                     </div>
                 </div>
 
@@ -84,3 +87,5 @@
     </script>
 </body>
 </html>
+
+
