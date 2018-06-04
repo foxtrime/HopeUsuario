@@ -20,6 +20,8 @@ class CreatePessoaJuridicaTable extends Migration
             $table->string('telefone');
             $table->string('endereco');
             $table->string('nomepessoacontato');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

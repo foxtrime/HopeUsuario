@@ -2,8 +2,7 @@
 @section('content')
 
 
-
-
+Pessoa Juridica Funcionando
 
 
 @endsection

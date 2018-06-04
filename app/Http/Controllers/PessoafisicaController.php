@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Pessoafisica;
+use App\User;
 
 class PessoafisicaController extends Controller
 {
@@ -14,7 +16,9 @@ class PessoafisicaController extends Controller
      */
     public function index()
     {
-       return view ('pessoafisica.dadospessoaispf');
+        
+        return view ('pessoafisica.dadospessoaispf');
+
     }
 
     /**

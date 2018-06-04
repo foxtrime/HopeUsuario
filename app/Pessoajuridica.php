@@ -12,6 +12,7 @@ class Pessoajuridica extends Model
         'cnpj',
     	'nomepessoacontato',
     	'telefone',
-        'endereco'
+        'endereco',
+        'user_id'
     ];
 }

@@ -31,4 +31,14 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Veiculocarga', 'user_id');
     }
+
+    public function pessoajuridica()
+    {
+        return $this->hasMany('App\Pessoajuridica', 'user_id');
+    }
+
+    public function pessoafisica()
+    {
+        return $this->hasMany('App\Pessoafisica', 'user_id');
+    }
 }

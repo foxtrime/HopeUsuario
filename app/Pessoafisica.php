@@ -14,6 +14,7 @@ class Pessoafisica extends Model
     	'telefone',
         'endereco',
         'sexo',
+        'user_id'
     ];
 
 }

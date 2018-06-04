@@ -41,7 +41,11 @@
                               <li class="dropdown">
 
                                  <li><a href="{{ url('/home')}}">Pagina inicial</a></li>
-                                 <li><a href="{{ url('/dadospessoaispf')}}">Dados Pessoais</a></li>
+                                 @if( Auth::User()->perfil == 'F')
+                                    <li><a href="{{ url('/dadospessoaispf')}}">Dados Pessoais</a></li>
+                                 @else
+                                    <li><a href="{{ url('/dadospessoaispj')}}">Dados Pessoais</a></li>
+                                 @endif
                                  <li><a href="{{ url('/dadosveiculos')}}">Dados do Veiculo</a></li>
                                  <li>
                                     <a href="{{ url('/logout') }}"

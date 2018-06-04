@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Pessoajuridica;
+use App\User;
 
 class PessoajuridicaController extends Controller
 {
@@ -13,7 +16,8 @@ class PessoajuridicaController extends Controller
      */
     public function index()
     {
-        //
+        
+        return view ('pessoajuridica.dadospessoaispj');
     }
 
     /**
