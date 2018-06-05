@@ -15,11 +15,11 @@ class CreatePessoaJuridicaTable extends Migration
     {
        Schema::create('pessoajuridica', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('razaosocial');
-            $table->string('cnpj');
-            $table->string('telefone');
-            $table->string('endereco');
-            $table->string('nomepessoacontato');
+            $table->string('razaosocial')          ->nullable();
+            $table->string('cnpj')                 ->nullable();
+            $table->string('telefone')             ->nullable();
+            $table->string('endereco')             ->nullable();
+            $table->string('nomepessoacontato')    ->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

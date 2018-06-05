@@ -15,15 +15,15 @@ class CreatePessoaFisicaTable extends Migration
     {
        Schema::create('pessoafisica', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->string('cpf');
-            $table->string('rg');
-            $table->string('telefone');
-            $table->string('endereco');
+            $table->string('nome')          ->nullable();
+            $table->string('cpf')           ->nullable();
+            $table->string('rg')            ->nullable();
+            $table->string('telefone')      ->nullable();
+            $table->string('endereco')      ->nullable();
             $table->enum('sexo',[
                                     'Feminino', 
                                     'Masculino', 
-                                ]);
+                                ])          ->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

@@ -70,11 +70,11 @@ class RegisterController extends Controller
             'perfil' => $data['perfil'],
         ]);
 
-         // if($data['perfil'] == 'J'){
-         //     $pj = new Pessoajuridica();
-         // } else {
-         //     $pf = new Pessoafisica();
-         // }
+          if($data['perfil'] == 'J'){
+              $pj = new Pessoajuridica();
+          } else {
+              $pf = new Pessoafisica();
+          }
 
         return $usuario;
 

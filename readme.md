@@ -40,13 +40,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
 
+//Subir alguma coisa no git 
+git add .
+git status
+git commit -am 'escrever'
+git push origin victor
 
-Sera que eu consigo???
-
-
-AIzaSyA7Z8KKwvp5PR4lO0gAlnPXph9wiUxHx1Y
-
-
+//Puxar alguma coisa do deploy
+git pull origin deploy
 
 
  
