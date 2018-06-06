@@ -34,12 +34,6 @@
 			<input type="text" class="form-control" id="nome" name="nome">
 		</div>				
 	</div>
-	<div class="col-md-offset-2 col-sm-offset-2 col-md-12 col-sm-12">		
-		<div class="form-group">
-			<label for="tipocaminhao">Tipo De Reboque:</label>
-			<input type="tipocaminhao" class="form-control" id="tipocaminhao" name="tipocaminhao">
-		</div>				
-	</div>
 	<div class="col-md-offset-2 col-sm-offset-2 col-md-12 col-sm-12">
 	    <label class="control-label">Sexo</label>
 	    <select class="dourado selectpicker error" data-style="select-with-transition has-dourado" data-size="7">

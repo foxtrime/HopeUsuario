@@ -61,7 +61,7 @@ class PessoafisicaController extends Controller
      */
     public function edit($id)
     {
-        //
+    
     }
 
     /**
@@ -73,7 +73,18 @@ class PessoafisicaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+            'nome'                  => 'required|max:255',
+            'cpf'                   => 'required',
+            'rg'                    => 'required',
+            'telefone'              => 'required',
+            'endereco'              => 'required',
+            'sexo'                  => 'required'
+        ]);
+
+
+
     }
 
     /**

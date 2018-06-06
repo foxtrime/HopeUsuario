@@ -70,10 +70,14 @@ class RegisterController extends Controller
             'perfil' => $data['perfil'],
         ]);
 
-          if($data['perfil'] == 'J'){
-              $pj = new Pessoajuridica();
+          if( $usuario->perfil == 'J'){
+              $pj = PessoaJuridica::create([
+                'user_id' => $usuario->id
+              ]);
           } else {
-              $pf = new Pessoafisica();
+              $pf = Pessoafisica::create([
+                'user_id' => $usuario->id
+              ]);
           }
 
         return $usuario;
