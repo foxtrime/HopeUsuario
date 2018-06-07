@@ -18,4 +18,5 @@ class Pessoafisica extends Model
         'user_id'
     ];
 
+
 }

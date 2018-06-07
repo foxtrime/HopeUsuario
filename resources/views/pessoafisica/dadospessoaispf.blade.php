@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
-<form action="{{ url('/dadospessoaispf') }}" method="POST" id="form_relatorio"> 
-	{!! method_field('POST') !!}
+<form action="{{ url("dadospessoaispf/$pf->id") }}" method="POST" id="form_relatorio"> 
+	{!! method_field('PUT') !!}
 	{{ csrf_field() }}
 	<div class="col-md-offset-2 col-sm-offset-2 col-md-12 col-sm-12">		
 		<div class="form-group">
@@ -36,7 +36,7 @@
 	</div>
 	<div class="col-md-offset-2 col-sm-offset-2 col-md-12 col-sm-12">
 	    <label class="control-label">Sexo</label>
-	    <select class="dourado selectpicker error" data-style="select-with-transition has-dourado" data-size="7">
+	    <select class="dourado selectpicker error" data-style="select-with-transition has-dourado" data-size="7" name="sexo">
 	       <option >Sexo</option>
 	       <option value="Masculino">Masculino</option>
 	       <option value="Feminino">Feminino</option>

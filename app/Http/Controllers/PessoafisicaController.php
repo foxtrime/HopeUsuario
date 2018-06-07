@@ -61,7 +61,9 @@ class PessoafisicaController extends Controller
      */
     public function edit($id)
     {
-        return view ('pessoafisica.dadospessoaispf');
+        $pf = Auth::user($id);
+        return view ('pessoafisica.dadospessoaispf',compact('pf'));
+
     }
 
     /**
@@ -73,15 +75,26 @@ class PessoafisicaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //$pf = Pessoafisica::find($id);
+        $pf = Pessoafisica::all();
+        $pf = $request->all();
 
-        $this->validate($request, [
-            'nome'                  => 'required|max:255',
-            'cpf'                   => 'required',
-            'rg'                    => 'required',
-            'telefone'              => 'required',
-            'endereco'              => 'required',
-            'sexo'                  => 'required'
-        ]);
+        dd($pf);
+
+        //$pf->fill($request->all());
+
+        $pf->save();
+
+        return redirect(url('/home'));
+        
+        // $this->validate($request, [
+        //     'nome'                  => 'required|max:255',
+        //     'cpf'                   => 'required',
+        //     'rg'                    => 'required',
+        //     'telefone'              => 'required',
+        //     'endereco'              => 'required',
+        //     'sexo'                  => 'required'
+        // ]);
 
     }
 
