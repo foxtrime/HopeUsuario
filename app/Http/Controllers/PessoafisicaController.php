@@ -61,7 +61,7 @@ class PessoafisicaController extends Controller
      */
     public function edit($id)
     {
-    
+        return view ('pessoafisica.dadospessoaispf');
     }
 
     /**
@@ -82,8 +82,6 @@ class PessoafisicaController extends Controller
             'endereco'              => 'required',
             'sexo'                  => 'required'
         ]);
-
-
 
     }
 
