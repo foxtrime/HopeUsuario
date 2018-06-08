@@ -9,11 +9,7 @@ use App\User;
 
 class PessoafisicaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         
@@ -21,89 +17,61 @@ class PessoafisicaController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        $pf = Auth::user($id);
-        return view ('pessoafisica.dadospessoaispf',compact('pf'));
+        //Pega o funcionario logado
+        $pf = Auth::user();
+        $dados = Pessoafisica::where('user_id', $id)->get();
+        //dd($dados);
+        return view ('pessoafisica.dadospessoaispf',compact('pf','dados'));
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //$pf = Pessoafisica::find($id);
-        $pf = Pessoafisica::all();
-        $pf = $request->all();
+        //Pega a Pessoa fisica pela chave estrangeira
+        $pf = Pessoafisica::where('user_id', $id)->first();
 
-        dd($pf);
+        //dd($pf);
+        //Valida os dados
+         $this->validate($request, [
+             'nome'                  => 'required|max:255',
+             'cpf'                   => 'required',
+             'rg'                    => 'required',
+             'telefone'              => 'required',
+             'endereco'              => 'required',
+             'sexo'                  => 'required'
+         ]);
 
-        //$pf->fill($request->all());
+        //dd($pf);
 
+        $pf->fill($request->all());
+       
+        //dd($pf->toArray());
+       
         $pf->save();
 
         return redirect(url('/home'));
         
-        // $this->validate($request, [
-        //     'nome'                  => 'required|max:255',
-        //     'cpf'                   => 'required',
-        //     'rg'                    => 'required',
-        //     'telefone'              => 'required',
-        //     'endereco'              => 'required',
-        //     'sexo'                  => 'required'
-        // ]);
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

@@ -34,7 +34,7 @@ class User extends Authenticatable
 
     public function pessoajuridica()
     {
-        return $this->hasMany('App\Pessoajuridica', 'user_id');
+        return $this->hasOne('App\Pessoajuridica', 'user_id');
     }
 
     public function pessoafisica()
