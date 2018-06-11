@@ -45,7 +45,8 @@
                                     <?php $id = Auth::user()->id; ?>
                                     <li><a href="{{ url("/dadospessoaispf/$id/edit")}}">Dados Pessoais</a></li>
                                  @else
-                                    <li><a href="{{ url('/dadospessoaispj')}}">Dados Pessoais</a></li>
+                                     <?php $id = Auth::user()->id; ?>
+                                    <li><a href="{{ url("/dadospessoaispj/$id/edit")}}">Dados Pessoais</a></li>
                                  @endif
                                  <li><a href="{{ url('/dadosveiculos')}}">Dados do Veiculo</a></li>
                                  <li>

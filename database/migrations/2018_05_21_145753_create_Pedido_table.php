@@ -13,7 +13,16 @@ class CreatePedidoTable extends Migration
      */
     public function up()
     {
-        //
+      Schema::create('pedido', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('hora');
+            $table->string('data');
+            $table->string('status');
+            $table->string('destino');
+            $table->string('periculosidade');
+            $table->string('tipocarga');   
+            $table->timestamps();
+        });
     }
 
     /**

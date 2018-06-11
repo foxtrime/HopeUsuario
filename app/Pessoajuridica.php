@@ -16,4 +16,10 @@ class Pessoajuridica extends Model
         'endereco',
         'user_id'
     ];
+
+
+    public function user()
+        {
+            return $this->belongTo('App\User', 'user_id');
+        }
 }

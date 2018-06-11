@@ -9,80 +9,72 @@ use App\User;
 
 class PessoajuridicaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         
         return view ('pessoajuridica.dadospessoaispj');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
-        //
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
-        //
+        
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
     {
-        //
+        //Pega o funcionario logado
+        $pj = Auth::user();
+        $dados = Pessoajuridica::where('user_id', $id)->get();
+
+        return view ('pessoajuridica.dadospessoaispj',compact('pj','dados'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
-        //
+        //Pega a Pessoa fisica pela chave estrangeira
+        $pj = Pessoajuridica::where('user_id', $id)->first();
+
+        //dd($pf);
+        //Valida os dados
+         $this->validate($request, [
+             'razaosocial'            => 'required|max:255',
+             'cnpj'                   => 'required',
+             'telefone'               => 'required',
+             'endereco'               => 'required',
+             'nomepessoacontato'      => 'required',
+            
+         ]);
+
+        //dd($pf);
+
+        $pj->fill($request->all());
+       
+        //dd($pf->toArray());
+       
+        $pj->save();
+
+        return redirect(url('/home'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
-        //
+        
     }
 }

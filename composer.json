@@ -7,6 +7,7 @@
     "require": {
         "php": ">=5.6.4",
         "doctrine/dbal": "^2.7",
+        "igorescobar/jquery-mask-plugin": "^1.14",
         "laravel/framework": "5.3.*"
     },
     "require-dev": {

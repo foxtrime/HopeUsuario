@@ -25,19 +25,19 @@
 		<div class="col-md-offset-2 col-sm-offset-2 col-md-12 col-sm-12">		
 			<div class="form-group">
 				<label for="cpf">CPF:</label>
-				<input type="number" class="form-control" id="cpf" name="cpf" value="{{ $dado->cpf or old('cpf')}}">
+				<input type="text" class="cpf form-control" id="cpf" name="cpf" value="{{ $dado->cpf or old('cpf')}}">
 			</div>				
 		</div>
 		<div class="col-md-offset-2 col-sm-offset-2 col-md-12 col-sm-12">		
 			<div class="form-group">
 				<label for="rg">RG:</label>
-				<input type="number" class="form-control" id="rg" name="rg" value="{{ $dado->rg or old('rg')}}">
+				<input type="text" class="form-control" id="rg" name="rg" value="{{ $dado->rg or old('rg')}}">
 			</div>				
 		</div>
 		<div class="col-md-offset-2 col-sm-offset-2 col-md-12 col-sm-12">		
 			<div class="form-group">
 				<label for="telefone">Telefone:</label>
-				<input type="number" class="form-control" id="telefone" name="telefone" value="{{ $dado->telefone or old('telefone')}}">
+				<input type="text" class="form-control" id="telefone" name="telefone" value="{{ $dado->telefone or old('telefone')}}">
 			</div>				
 		</div>
 		<div class="col-md-offset-2 col-sm-offset-2 col-md-12 col-sm-12">		
@@ -69,3 +69,11 @@
 
 
 @endsection
+
+@push('scripts')
+
+<script type="text/javascript">
+
+</script>
+
+@endpush
